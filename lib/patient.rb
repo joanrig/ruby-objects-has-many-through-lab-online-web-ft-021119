@@ -17,13 +17,14 @@ class Patient
 
   def new_appointment(doctor,date)
     appointment = Appointment.new(date,self, doctor)
-    @appointments<< appointment
     @doctors << doctor
     appointment
+    binding.pry
   end
 
+    def doctors
+      self.appointments.map {|appointment| appointment.doctor}
+      #binding.pry
+    end
 
-  def artists
-    self.songs.map {|song| song.artist}
-  end
 end
